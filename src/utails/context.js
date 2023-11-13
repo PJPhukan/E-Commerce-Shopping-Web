@@ -5,7 +5,7 @@ export const Context = createContext();
 
 export default function AppContext({ children }) {
     return (
-        <Context.Provider>
+        <Context.Provider value=''>
             {children}
         </Context.Provider>
     )
