@@ -18,7 +18,7 @@ const Newsletter = () => {
                 Sign up for latest updates and offers
             </span>
             <div className="form">
-                <input type="text" placeholder='Email Address' />
+                <input type="email" placeholder='Email Address' />
                 <button>Subscribe</button>
             </div>
             <div className="text">Will be used in accordance with our Privacy Policy</div>
