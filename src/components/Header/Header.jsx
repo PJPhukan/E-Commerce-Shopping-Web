@@ -6,7 +6,7 @@ import { TbSearch } from "react-icons/tb"
 import { CgShoppingCart } from "react-icons/cg"
 import { AiOutlineHeart } from "react-icons/ai"
 
-// import Search from './Search/Search'
+import Search from './Search/Search'
 import Cart from '../Cart/Cart'
 // import Context from '../../utails/context'
 import "./Header.scss";
@@ -17,6 +17,8 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false)
     //Show cart usestate
     const [showCart, setShowCart] = useState(false)
+    //Show search usestate
+    const [showSearch, setShowSearch] = useState(false)
 
 
     //handle navber scroll function
@@ -38,6 +40,11 @@ const Header = () => {
         setShowCart(true);
 
     }
+    //functions for show search
+    const showSearchFunction = () => {
+        setShowSearch(true);
+
+    }
 
     return (
         <>
@@ -52,7 +59,7 @@ const Header = () => {
                         PJSTORE.
                     </div>
                     <div className="right">
-                        <TbSearch />
+                        <TbSearch onClick={showSearchFunction} />
                         <AiOutlineHeart />
                         <span className="card-icon" onClick={showCartFunction}>
                             <CgShoppingCart />
@@ -61,7 +68,8 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            {showCart && <Cart setShowCart={setShowCart}/>}
+            {showCart && <Cart setShowCart={setShowCart} />}
+            {showSearch && <Search setShowSearch={setShowSearch} />}
         </>
 
     );
